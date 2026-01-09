@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PDF Label Cutter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>PDF Label Cutter</h1>
+    <p>Upload a PDF and crop labels automatically or manually</p>
+  </header>
+
+  <section class="controls">
+    <div id="dropZone" class="drop-zone">
+      <input id="pdfFile" type="file" accept="application/pdf" style="display: none;" />
+      <p>Choose PDF File or Drag & Drop PDF here</p>
+    </div>
+    <div class="button-row">
+      <button id="cropBtn">Crop FK Label</button>
+      <button id="manualBtn">Manual Mode</button>
+    </div>
+
+    <div id="manualControls" style="display: none;">
+      <div class="control-row">
+        <label>
+          Top Left X: <input id="tlx" type="number" value="190" />
+        </label>
+        <label>
+          Top Left Y: <input id="tly" type="number" value="28" />
+        </label>
+      </div>
+      <div class="control-row">
+        <label>
+          Bottom Right X: <input id="brx" type="number" value="407" />
+        </label>
+        <label>
+          Bottom Right Y: <input id="bry" type="number" value="382" />
+        </label>
+      </div>
+      <button id="processBtn">Process & Preview</button>
+    </div>
+  </section>
+
+  <main id="output">
+    <!-- Cropped images will appear here -->
+  </main>
+
+  <footer>
+    <button id="downloadBtn" style="display: none;">Download Crop</button>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
